@@ -1,0 +1,45 @@
+{
+  "name": "mern-shop-app",
+  "version": "1.0.0",
+  "description": "Интернет-магазин гаджетов (MERN)",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon --watch backend --exec babel-node backend/server.js",
+    "server": "nodemon backend/server.js --exec babel-node",
+    "client": "cd frontend/ && npm run start",
+    "dev": "npm-run-all --parallel server client",
+    "data:import": "nodemon backend/seeder/seeder.js --exec babel-node",
+    "data:destroy": "nodemon backend/seeder/seeder.js -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladistarshinov/mern-shop-app.git"
+  },
+  "author": "Vlad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladistarshinov/mern-shop-app/issues"
+  },
+  "homepage": "https://github.com/vladistarshinov/mern-shop-app#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.6",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6",
+    "npm-run-all": "^4.1.5"
+  }
+}
